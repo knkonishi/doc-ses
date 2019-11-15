@@ -23,7 +23,8 @@
   <xref linkend="storage-intro-core-nodes"/> for a brief introduction) allows
   extending its functionality via <emphasis>modules</emphasis>, such as
   'dashboard' (see <xref linkend="ceph-dashboard"/>), 'prometheus' (see
-  <xref linkend="monitoring-alerting"/>), or 'balancer'.
+  <xref linkend="monitoring-alerting"/>, or 'balancer' (see
+  <xref linkend="mgr-modules-balancer"/>).
  </para>
  <para>
   To list all available modules, run:
@@ -54,6 +55,19 @@
         "dashboard": "http://myserver.com:7789/",
         "restful": "https://myserver.com:8789/"
 }</screen>
+ <sect1 xml:id="mgr-modules-list">
+  <title>List of Supported Modules</title>
+
+  <para>
+   Following is a list of supported &mgr; modules:
+  </para>
+
+  <itemizedlist>
+   <listitem>
+    <para></para>
+   </listitem>
+  </itemizedlist>
+ </sect1>
  <sect1 xml:id="mgr-modules-balancer">
   <title>Balancer</title>
 
