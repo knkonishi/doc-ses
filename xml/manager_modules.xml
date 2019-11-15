@@ -21,10 +21,7 @@
  <para>
   The architecture of the &mgr; (refer to
   <xref linkend="storage-intro-core-nodes"/> for a brief introduction) allows
-  extending its functionality via <emphasis>modules</emphasis>, such as
-  'dashboard' (see <xref linkend="ceph-dashboard"/>), 'prometheus' (see
-  <xref linkend="monitoring-alerting"/>, or 'balancer' (see
-  <xref linkend="mgr-modules-balancer"/>).
+  extending its functionality via <emphasis>modules</emphasis>.
  </para>
  <para>
   To list all available modules, run:
@@ -62,11 +59,114 @@
    Following is a list of supported &mgr; modules:
   </para>
 
-  <itemizedlist>
-   <listitem>
-    <para></para>
-   </listitem>
-  </itemizedlist>
+  <variablelist>
+   <varlistentry>
+    <term>prometheus</term>
+    <listitem>
+     <para>
+      Provides a &prometheus; exporter to pass on &ceph; performance counters.
+      Refer to <xref linkend="monitoring-alerting"/>.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term>dashboard</term>
+    <listitem>
+     <para>
+      The &dashboard; is a built-in Web-based &ceph; management and monitoring
+      application. Refer to <xref linkend="ceph-dashboard" />.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term>balancer</term>
+    <listitem>
+     <para>
+      Balancer optimizes the placement group distribution across OSDs for a
+      more balanced deployment. Balancer is always activated. Refer to
+      <xref linkend="mgr-modules-balancer" />.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term>orchestrator_cli</term>
+    <listitem>
+     <para>
+      This module provides a command line interface to orchestrator modules.
+      Orchestrator CLI is always activated.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term>iostat</term>
+    <listitem>
+     <para>
+      This module shows the current throughput and IOPS done on the &ceph;
+      cluster.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term>crash</term>
+    <listitem>
+     <para>
+      The crash module collects information about daemon crash dumps and stores
+      it in the &ceph; cluster for later analysis.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term>telemetry</term>
+    <listitem>
+     <para>
+      The telemetry module sends anonymous data about the cluster back to the
+      &ceph; developers to help understand how &ceph; is used and what problems
+      users may be experiencing. Telemetry is always activated. Refer to
+      <xref linkend="mgr-modules-telemetry"/>.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term>progress</term>
+    <listitem>
+     <para>
+      ADDME
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term>volumes</term>
+    <listitem>
+     <para>
+      ADDME
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term>status</term>
+    <listitem>
+     <para>
+      ADDME
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term>devicehealth</term>
+    <listitem>
+     <para>
+      ADDME
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term>rbd_module</term>
+    <listitem>
+     <para>
+      ADDME
+     </para>
+    </listitem>
+   </varlistentry>
+  </variablelist>
  </sect1>
  <sect1 xml:id="mgr-modules-balancer">
   <title>Balancer</title>
