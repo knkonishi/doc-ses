@@ -59,8 +59,9 @@
    <title>Always-on Modules</title>
    <para>
     While you can activate or deactivate majority of &mgr; modules as you need,
-    there is a group of modules that substantial to &ceph; and are always on.
-    You cannot deactivate them and they are not even listed in the output of
+    there is a group of modules that are substantial to &ceph; and are always
+    on. You cannot deactivate them and they are not even listed in the output
+    of
    </para>
 <screen>&prompt.smaster;ceph mgr module ls</screen>
   </tip>
