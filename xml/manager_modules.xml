@@ -55,6 +55,16 @@
  <sect1 xml:id="mgr-modules-list">
   <title>List of Supported Modules</title>
 
+  <tip>
+   <title>Always-on Modules</title>
+   <para>
+    While you can activate or deactivate majority of &mgr; modules as you need,
+    there is a group of modules that substantial to &ceph; and are always on.
+    You cannot deactivate them and they are not even listed in the output of
+   </para>
+<screen>&prompt.smaster;ceph mgr module ls</screen>
+  </tip>
+
   <para>
    Following is a list of supported &mgr; modules:
   </para>
@@ -64,8 +74,8 @@
     <term>prometheus</term>
     <listitem>
      <para>
-      Provides a &prometheus; exporter to pass on &ceph; performance counters.
-      Refer to <xref linkend="monitoring-alerting"/>.
+      Provides the &prometheus; exporter to pass on &ceph; performance
+      counters. Refer to <xref linkend="monitoring-alerting"/>.
      </para>
     </listitem>
    </varlistentry>
@@ -83,7 +93,7 @@
     <listitem>
      <para>
       Balancer optimizes the placement group distribution across OSDs for a
-      more balanced deployment. Balancer is always activated. Refer to
+      more balanced deployment. The balancer module is always on. Refer to
       <xref linkend="mgr-modules-balancer" />.
      </para>
     </listitem>
@@ -93,7 +103,7 @@
     <listitem>
      <para>
       This module provides a command line interface to orchestrator modules.
-      Orchestrator CLI is always activated.
+      The orchestrator CLI module is always on.
      </para>
     </listitem>
    </varlistentry>
@@ -121,7 +131,7 @@
      <para>
       The telemetry module sends anonymous data about the cluster back to the
       &ceph; developers to help understand how &ceph; is used and what problems
-      users may be experiencing. Telemetry is always activated. Refer to
+      users may be experiencing. The telemetry module is always on. Refer to
       <xref linkend="mgr-modules-telemetry"/>.
      </para>
     </listitem>
@@ -130,7 +140,7 @@
     <term>progress</term>
     <listitem>
      <para>
-      ADDME
+      ADDME The progress module is always on.
      </para>
     </listitem>
    </varlistentry>
@@ -138,7 +148,7 @@
     <term>volumes</term>
     <listitem>
      <para>
-      ADDME
+      ADDME The volumes module is always on.
      </para>
     </listitem>
    </varlistentry>
@@ -146,7 +156,7 @@
     <term>status</term>
     <listitem>
      <para>
-      ADDME
+      ADDME The status module is always on.
      </para>
     </listitem>
    </varlistentry>
@@ -154,15 +164,15 @@
     <term>devicehealth</term>
     <listitem>
      <para>
-      ADDME
+      ADDME The devicehealth module is always on.
      </para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term>rbd_module</term>
+    <term>rbd_support</term>
     <listitem>
      <para>
-      ADDME
+      ADDME The rbd_support module is always on.
      </para>
     </listitem>
    </varlistentry>
