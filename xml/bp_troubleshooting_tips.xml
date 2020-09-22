@@ -18,42 +18,31 @@
   &ceph; cluster and provides tips how to set the cluster up.
  </para>
  <sect1 xml:id="tips-orphaned-partitions">
-  <title>Identifying Orphaned Partitions</title>
+  <title>Identifying Orphaned Volumes</title>
 
   <para>
-   To identify possibly orphaned journal/WAL/DB devices, follow these steps:
+   To identify possibly orphaned journal/WAL/DB volumes, follow these steps:
   </para>
 
   <procedure>
    <step>
     <para>
-     Pick the device that may have orphaned partitions and save the list of its
-     partitions to a file:
+     Get a list of OSDs that should run on a particular host. Get the output of ceph osd tree and find the host in question for a list of OSDs
+     on this host.
     </para>
 <screen>
-&prompt.sminion;ls /dev/sdd?* &gt; /tmp/partitions
+&prompt.sminion;ceph osd tree | less
 </screen>
    </step>
    <step>
     <para>
-     Run <command>readlink</command> against all block.wal, block.db, and
-     journal devices, and compare the output to the previously saved list of
-     partitions:
-    </para>
-<screen>
-&prompt.sminion;readlink -f /var/lib/ceph/osd/ceph-*/{block.wal,block.db,journal} \
- | sort | comm -23 /tmp/partitions -
-</screen>
-    <para>
-     The output is the list of partitions that are <emphasis>not</emphasis>
-     used by &ceph;.
+     Compare the list of OSD IDs to the ceph-volume lvm list reports. Any IDs missing in the ceph osd tree output are orphaned.
     </para>
    </step>
    <step>
     <para>
-     Remove the orphaned partitions that do not belong to &ceph; with your
-     preferred command (for example, <command>fdisk</command>,
-     <command>parted</command>, or <command>sgdisk</command>).
+     Remove the orphaned volumes that do not belong to &ceph; with 
+     ceph-volume lvm zap --destroy --osd-id <ID>.
     </para>
    </step>
   </procedure>
