@@ -41,8 +41,8 @@
    </step>
    <step>
     <para>
-     Remove the orphaned volumes that do not belong to &ceph; with 
-     ceph-volume lvm zap --destroy --osd-id <ID>.
+     Remove the orphaned volumes that do not belong to &ceph; with
+     ceph-volume lvm zap --destroy --osd-id <replaceable>ID</replaceable>.
     </para>
    </step>
   </procedure>
